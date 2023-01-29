@@ -1,11 +1,11 @@
-const wd = 640;
-const ht = 360;
-let currentColor = 1;
-const palette = {
-  c1: 0,
-  c2: 1,
-  c3: 2,
-};
+const wd = 720;
+const ht = 480;
+// let currentColor = 1;
+// const palette = {
+//   c1: 0,
+//   c2: 1,
+//   c3: 2,
+// };
 
 const randIndex = (arr) => {
   return Math.floor(Math.random() * arr.length);
@@ -121,9 +121,9 @@ const main = async () => {
   sel.addEventListener("change", (evt) => update(evt, colors));
 };
 
-const bump = (c, canvasRef) => {
-  const canvas = document.getElementById("canv");
-  const ctx = canvas.getContext("2d");
+const bump = (c, ctx) => {
+  // const canvas = document.getElementById("canv");
+  // const ctx = canvas.getContext("2d");
 
   const r = 16 + Math.round(Math.random() * 80);
   const x = Math.round(Math.random() * wd);

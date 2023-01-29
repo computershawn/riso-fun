@@ -2,16 +2,15 @@ import React from "react";
 
 import Swatch from "./swatch.jsx";
 
-const Swatches = ({ data }) => {
-  const [selectedIndex, setSelectedIndex] = React.useState(32);
+const Swatches = ({ data, onChangeColor }) => {
+  const [selectedIndex, setSelectedIndex] = React.useState(21);
   const [selectedLayer, setSelectedLayer] = React.useState(0);
-  const [colorSelections, setColorSelections] = React.useState([32, 10, 14, 21]);
+  const [colorSelections, setColorSelections] = React.useState([21, 10, 14, 32]);
 
   const handleChangeSelect = (e) => {
     const i = parseInt(e.target.value);
     setSelectedLayer(i);
     setSelectedIndex(colorSelections[i]);
-    console.log(i);
   }
 
   const handleClicky = (i) => {
@@ -20,6 +19,7 @@ const Swatches = ({ data }) => {
       return selectedLayer === index ? i : curr;
     });
     setColorSelections(updated);
+    onChangeColor(updated);
   }
 
   const options = [
