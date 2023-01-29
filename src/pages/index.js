@@ -45,7 +45,7 @@ export default function Riso() {
         onCheckBackground={handleCheckBackground}
         backgroundOn={backgroundOn}
       />
-      <Canv canvasColors={canvasColors} />
+      <Canv canvasColors={canvasColors} hasBackgroundColor={backgroundOn} />
     </div>
   );
 }

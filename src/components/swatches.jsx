@@ -21,12 +21,10 @@ const Swatches = ({ data, onChangeColor, colorSelections, backgroundOn, onCheckB
   }
 
   const handleCheck = (e) => {
-    // console.log(e.target.checked);
     onCheckBackground(e.target.checked);
   }
 
   const options = [
-    'background',
     'layer 1',
     'layer 2',
     'layer 3',
