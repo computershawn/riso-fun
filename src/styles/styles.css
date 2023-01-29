@@ -159,15 +159,20 @@
 }
 
 .layer1.separated {
-  /* left: calc(194px + 728px); */
   left: calc(194px + 364px);
 }
 
 .layer2.separated {
-  /* left: calc(194px + 2 * 728px); */
   left: calc(194px + 2 * 364px);
 }
 
-/* .controls {
-  margin-top: 360px;
-} */
+.btn-container {
+  width: 186px;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.btn-container button {
+  width: 100%;
+  height: 1.5rem;
+}
