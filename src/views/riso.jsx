@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
+
 import Swatches from '../components/swatches.jsx';
 import Canv from '../components/canv.jsx';
 
 export default function Riso() {
-  const [data, setData] = useState([]);
+  const [data, setData] = React.useState([]);
+  const canvRef = useRef();
 
   const getData = () => {
     fetch("colorlist.json", {
@@ -20,7 +22,7 @@ export default function Riso() {
       });
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     getData();
   }, []);
 
@@ -29,7 +31,14 @@ export default function Riso() {
       <Swatches data={data} />
       <Canv />
       <div className="controls">
+        <button id="fun">🎲 colors</button>
 
+        <label htmlFor="color-select">Color</label>
+        <select id="color-select" name="">
+          <option value="1">&nbsp;1</option>
+          <option value="2">&nbsp;2</option>
+          <option value="3">&nbsp;3</option>
+        </select>
       </div>
     </div>
   );

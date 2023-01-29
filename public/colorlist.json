@@ -1,0 +1,195 @@
+[
+  {
+    "hex": "#ff3eb5",
+    "name": "Fluorescent Pink",
+    "pan": "PMS 806 U",
+    "rgb": [255, 62, 181]
+  },
+  {
+    "hex": "#ff4c65",
+    "name": "Neon Coral",
+    "pan": "PMS 812 U",
+    "rgb": [255, 76, 101]
+  },
+  {
+    "hex": "#facbaf",
+    "name": "Peach",
+    "pan": "PMS 932 U",
+    "rgb": [250, 203, 175]
+  },
+  {
+    "hex": "#ff7276",
+    "name": "Fluorescent Orange",
+    "pan": "PMS 805 U",
+    "rgb": [255, 114, 118]
+  },
+  {
+    "hex": "#f7ff00",
+    "name": "Fluorescent Yellow*",
+    "pan": "PMS 803 U",
+    "rgb": [247, 255, 0]
+  },
+  {
+    "hex": "#39ff14",
+    "name": "Fluorescent Green*",
+    "pan": "PMS 802 U",
+    "rgb": [57, 255, 20]
+  },
+  {
+    "hex": "#ac936e",
+    "name": "Metallic Gold*",
+    "pan": "PMS 872 U",
+    "rgb": [172, 147, 110]
+  },
+  {
+    "hex": "#f5c7b8",
+    "name": "Bisque",
+    "pan": "PMS 489 U",
+    "rgb": [245, 199, 184]
+  },
+  {
+    "hex": "#f984ca",
+    "name": "Bubblegum",
+    "pan": "PMS 231 U",
+    "rgb": [249, 132, 202]
+  },
+  {
+    "hex": "#d1517a",
+    "name": "Cranberry",
+    "pan": "PMS 214 U",
+    "rgb": [209, 81, 122]
+  },
+  {
+    "hex": "#f65058",
+    "name": "Scarlet",
+    "pan": "PMS RED 032 U",
+    "rgb": [246, 80, 88]
+  },
+  {
+    "hex": "#ff6c2f",
+    "name": "Orange",
+    "pan": "PMS ORANGE 021 U",
+    "rgb": [255, 108, 47]
+  },
+  {
+    "hex": "#ffb511",
+    "name": "Sunflower",
+    "pan": "PMS 116 U",
+    "rgb": [255, 181, 17]
+  },
+  {
+    "hex": "#ffe800",
+    "name": "Yellow",
+    "pan": "PMS YELLOW U",
+    "rgb": [255, 232, 0]
+  },
+  {
+    "hex": "#e3ed55",
+    "name": "Light Lime",
+    "pan": "PMS 387 U",
+    "rgb": [227, 237, 85]
+  },
+  {
+    "hex": "#7dc6a0",
+    "name": "Agave",
+    "pan": "PMS 345 U",
+    "rgb": [125, 198, 160]
+  },
+  {
+    "hex": "#67b346",
+    "name": "Kelly Green",
+    "pan": "PMS 368 U",
+    "rgb": [103, 179, 70]
+  },
+  {
+    "hex": "#407060",
+    "name": "Hunter Green",
+    "pan": "PMS 342 U",
+    "rgb": [64, 112, 96]
+  },
+  {
+    "hex": "#00aa93",
+    "name": "Turquoise",
+    "pan": "PMS 3275 U",
+    "rgb": [0, 170, 147]
+  },
+  {
+    "hex": "#009da5",
+    "name": "Light Teal",
+    "pan": "PMS 320 U",
+    "rgb": [0, 157, 165]
+  },
+  {
+    "hex": "#82d8d5",
+    "name": "Mint",
+    "pan": "PMS 324 U",
+    "rgb": [130, 216, 213]
+  },
+  {
+    "hex": "#5ec8e5",
+    "name": "Aqua",
+    "pan": "PMS 637 U",
+    "rgb": [94, 200, 229]
+  },
+  {
+    "hex": "#62a8e5",
+    "name": "Cornflower",
+    "pan": "PMS 292 U",
+    "rgb": [98, 168, 229]
+  },
+  {
+    "hex": "#0078bf",
+    "name": "Blue",
+    "pan": "PMS 3005 U",
+    "rgb": [0, 120, 191]
+  },
+  {
+    "hex": "#3d5588",
+    "name": "Federal Blue",
+    "pan": "PMS 288 U",
+    "rgb": [61, 85, 136]
+  },
+  {
+    "hex": "#375e77",
+    "name": "Steel",
+    "pan": "PMS 302 U",
+    "rgb": [55, 94, 119]
+  },
+  {
+    "hex": "#9d7ad2",
+    "name": "Violet",
+    "pan": "PMS 265 U",
+    "rgb": [157, 122, 210]
+  },
+  {
+    "hex": "#735990",
+    "name": "Purple",
+    "pan": "PMS 268 U",
+    "rgb": [115, 89, 144]
+  },
+  {
+    "hex": "#914e72",
+    "name": "Burgundy",
+    "pan": "PMS 235 U",
+    "rgb": [145, 78, 114]
+  },
+  {
+    "hex": "#925f52",
+    "name": "Brown",
+    "pan": "PMS 7526 U",
+    "rgb": [146, 95, 82]
+  },
+  {
+    "hex": "#bb8b41",
+    "name": "Flat Gold",
+    "pan": "PMS 1245 U",
+    "rgb": [187, 139, 65]
+  },
+  {
+    "hex": "#88898a",
+    "name": "Light Gray",
+    "pan": "PMS 424 U",
+    "rgb": [136, 137, 138]
+  },
+  { "hex": "#000000", "name": "Black", "pan": "PMS BLACK U", "rgb": [0, 0, 0] }
+]

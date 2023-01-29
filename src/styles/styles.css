@@ -1,0 +1,114 @@
+.swatch {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #000000;
+}
+
+/* .selected {
+  width: 0.125rem;
+  background-color: transparent;
+} */
+
+/* .selected.active {
+  background-color: black;  
+} */
+
+.row {
+  display: flex;
+  margin-bottom: 0.125rem;
+  height: 1.125rem;
+  align-items: center;
+}
+
+.canv {
+  width: 720px;
+  height: 480px;
+  position: absolute;
+  top: 0.25rem;
+  left: 194px;
+}
+
+.swatches-container {
+  width: 186px;
+  height: 156px;
+  border: 1px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-colors {
+  width: 186px;
+  height: 2rem;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fefefe;
+  margin-top: 4px;
+  margin-left: 4px;
+  display: flex;
+}
+
+.selected-color {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #222222;
+  background-color: #dddddd;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+}
+
+.controls {
+  margin-top: 0.5rem;
+}
+
+/* .swatch {
+  background-image: url('https://images.unsplash.com/photo-1484256017452-47f3e80eae7c?dpr=1&auto=format&fit=crop&w=2850&q=60&cs=tinysrgb');
+  background-size: cover;
+  background-position: center center;
+  background-color: tomato;
+} */
+
+.square-container {
+  width: 174px;
+  height: 108px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1.25rem);
+  grid-gap: 0.125rem;
+}
+
+.square {
+  position: relative;
+  border: 2px solid black;
+  border-radius: 0.125rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.square::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.square .content {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.dropdown {
+  width: 174px;
+  margin-bottom: 0.25rem;
+}
+
+.controls {
+  margin-top: 360px;
+}
