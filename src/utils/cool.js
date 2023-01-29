@@ -4,9 +4,9 @@ const randIndex = (arr) => {
   return Math.floor(Math.random() * arr.length);
 };
 
-const bump = (c, ctx, r, x, y, alp, outlines) => {
-  const co = lerpColorRGB(c.rgb, [255, 255, 255], alp);
-  // ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
+const bump = (c, ctx, r, x, y, tint, outlines) => {
+  const co = lerpColorRGB(c.rgb, [255, 255, 255], tint);
+  // ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${tint})`;
   ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b})`;
   ctx.strokeStyle = `rgb(0, 0, 0, 0.5)`;
   ctx.beginPath();
@@ -33,9 +33,9 @@ const bump = (c, ctx, r, x, y, alp, outlines) => {
   }
 };
 
-const circo = (c, ctx, r, x, y, alp, outlines) => {
-  const co = lerpColorRGB(c.rgb, [255, 255, 255], alp);
-  // ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
+const circo = (c, ctx, r, x, y, tint, outlines) => {
+  const co = lerpColorRGB(c.rgb, [255, 255, 255], tint);
+  // ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${tint})`;
   ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b})`;
   ctx.strokeStyle = `rgb(0, 0, 0, 0.5)`;
   ctx.beginPath();
