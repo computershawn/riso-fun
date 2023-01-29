@@ -41,7 +41,6 @@ const Canv = ({ canvasColors, geoms, hasBackgroundColor, separated }) => {
           bump(c0, ctx0, b.r, b.x, b.y, b.tint, false);
         }
       });
-
   
       // Render second layer (color) of geometry
       geoms.circles.forEach(c => {
