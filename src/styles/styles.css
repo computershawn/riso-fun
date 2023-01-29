@@ -151,6 +151,14 @@
   mix-blend-mode: multiply;
 }
 
+.layer1 {
+  left: calc(194px + 720px);
+}
+
+.layer2 {
+  left: calc(194px + 2 * 720px);
+}
+
 
 /* .controls {
   margin-top: 360px;

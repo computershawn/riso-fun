@@ -5,7 +5,8 @@ const randIndex = (arr) => {
 };
 
 const bump = (c, ctx, r, x, y, alp, outlines) => {
-  ctx.fillStyle = `rgb(${c.rgb[0]}, ${c.rgb[1]}, ${c.rgb[2]}, ${alp})`;
+  const co = lerpColorRGB(c.rgb, [255, 255, 255], alp);
+  ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
   ctx.strokeStyle = `rgb(0, 0, 0, 0.5)`;
   ctx.beginPath();
   ctx.arc(x, y, r, Math.PI, 2 * Math.PI);
@@ -32,7 +33,8 @@ const bump = (c, ctx, r, x, y, alp, outlines) => {
 };
 
 const circo = (c, ctx, r, x, y, alp, outlines) => {
-  ctx.fillStyle = `rgb(${c.rgb[0]}, ${c.rgb[1]}, ${c.rgb[2]}, ${alp})`;
+  const co = lerpColorRGB(c.rgb, [255, 255, 255], alp);
+  ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
   ctx.strokeStyle = `rgb(0, 0, 0, 0.5)`;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, 2 * Math.PI);
@@ -42,4 +44,22 @@ const circo = (c, ctx, r, x, y, alp, outlines) => {
   }
 };
 
-export { bump, circo, randIndex };
+const lerpColorRGB = (color0, color1, amount) => {
+  const [r0, g0, b0] = color0;
+  const [r1, g1, b1] = color1;
+  const r = Math.round(r0 + amount * (r1 - r0));
+  const g = Math.round(g0 + amount * (g1 - g0));
+  const b = Math.round(b0 + amount * (b1 - b0));
+
+  return { r, g, b };
+}
+
+const easeInCubic = (x) => {
+  return x * x * x;
+}
+
+function easeOutCubic(x) {
+  return 1.0 - Math.pow(1.0 - x, 3);
+}
+
+export { bump, circo, easeInCubic, easeOutCubic, randIndex };

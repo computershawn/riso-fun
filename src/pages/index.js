@@ -4,7 +4,7 @@ import Canv from '../components/canv.jsx';
 
 export default function Riso() {
   const [data, setData] = useState([]);
-  const [colorSelections, setColorSelections] = useState([32, 21, 10]);
+  const [colorSelections, setColorSelections] = useState([20, 10, 13]);
   const [backgroundOn, setBackgroundOn] = useState(false);
 
   const getData = () => {

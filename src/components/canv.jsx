@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import { bump, circo } from '@/utils/cool';
+import { bump, circo, easeOutCubic } from '@/utils/cool';
 import { wd, ht } from '@/constants';
 
 const Canv = ({ canvasColors, hasBackgroundColor }) => {
@@ -17,7 +17,7 @@ const Canv = ({ canvasColors, hasBackgroundColor }) => {
       const y = Math.round(Math.random() * ht);
       const alp = 0.4 + Math.random() * 0.56;
       const outlines = Math.random() > 0.5;
-      const activeLayer = Math.round(Math.random() * 2);
+      const activeLayer = Math.round(easeOutCubic(Math.random()) * 2);
       circles.push({
         r, x, y, alp, outlines, activeLayer
       });  
@@ -29,7 +29,7 @@ const Canv = ({ canvasColors, hasBackgroundColor }) => {
       const y = Math.round(Math.random() * ht);
       const alp = 0.4 + Math.random() * 0.56;
       const outlines = Math.random() > 0.5;
-      const activeLayer = Math.round(Math.random() * 2);
+      const activeLayer = Math.round(easeOutCubic(Math.random()) * 2);
       bumps.push({
         r, x, y, alp, outlines, activeLayer
       });
@@ -50,7 +50,7 @@ const Canv = ({ canvasColors, hasBackgroundColor }) => {
   
       // Render background
       // ctx0.fillStyle = `rgb(${c0.rgb[0]}, ${c0.rgb[1]}, ${c0.rgb[2]})`;
-      ctx0.fillStyle = hasBackgroundColor ? `rgb(${c0.rgb[0]}, ${c0.rgb[1]}, ${c0.rgb[2]}, ${0.48})` : 'rgb(255, 255, 255)';
+      ctx0.fillStyle = hasBackgroundColor ? `rgb(${c0.rgb[0]}, ${c0.rgb[1]}, ${c0.rgb[2]}, ${0.24})` : 'rgb(255, 255, 255)';
       ctx0.fillRect(0, 0, wd, ht);
 
       // Render first layer (color) of geometry
@@ -74,7 +74,7 @@ const Canv = ({ canvasColors, hasBackgroundColor }) => {
         const dX = delta * (Math.random() > 0.5 ? 1 : -1);
         const dY = delta * (Math.random() > 0.5 ? 1 : -1);
         if (c.activeLayer === 1 || c.activeLayer === 2) {
-          circo(c1, ctx1, c.r, c.x + dX, c.y + dY, c.alp, c.outlines);
+          circo(c1, ctx1, c.r, c.x + dX, c.y + dY, c.alp, false);
         }
       });
 
@@ -83,7 +83,7 @@ const Canv = ({ canvasColors, hasBackgroundColor }) => {
         const dX = delta * (Math.random() > 0.5 ? 1 : -1);
         const dY = delta * (Math.random() > 0.5 ? 1 : -1);
         if (b.activeLayer === 1 || b.activeLayer === 2) {
-          bump(c1, ctx1, b.r, b.x + dX, b.y + dY, b.alp, b.outlines);
+          bump(c1, ctx1, b.r, b.x + dX, b.y + dY, b.alp, false);
         }
       });
 
