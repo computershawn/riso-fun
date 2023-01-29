@@ -2,10 +2,9 @@ import React from "react";
 
 import Swatch from "./swatch.jsx";
 
-const Swatches = ({ data, onChangeColor }) => {
-  const [selectedIndex, setSelectedIndex] = React.useState(21);
+const Swatches = ({ data, onChangeColor, colorSelections, backgroundOn, onCheckBackground }) => {
+  const [selectedIndex, setSelectedIndex] = React.useState(colorSelections[0]);
   const [selectedLayer, setSelectedLayer] = React.useState(0);
-  const [colorSelections, setColorSelections] = React.useState([21, 10, 14, 32]);
 
   const handleChangeSelect = (e) => {
     const i = parseInt(e.target.value);
@@ -18,8 +17,12 @@ const Swatches = ({ data, onChangeColor }) => {
     const updated = colorSelections.map((curr, index) => {
       return selectedLayer === index ? i : curr;
     });
-    setColorSelections(updated);
     onChangeColor(updated);
+  }
+
+  const handleCheck = (e) => {
+    // console.log(e.target.checked);
+    onCheckBackground(e.target.checked);
   }
 
   const options = [
@@ -55,6 +58,7 @@ const Swatches = ({ data, onChangeColor }) => {
                     key={d.name}
                     info={d}
                     index={index}
+                    isLast={index === data.length - 1}
                     selected={index === selectedIndex}
                     clicky={handleClicky}
                   />
@@ -62,11 +66,24 @@ const Swatches = ({ data, onChangeColor }) => {
               })}
             </div>
           </div>
-          <div className="selected-colors">
-            {colorSelections.map(co => {
-              const colorDropStyle = {backgroundColor: data[co].hex};
-              return (<div key={options[co]} className="selected-color" style={colorDropStyle}></div>);
-            })}
+          <div>
+            <div className="selected-colors">
+              {colorSelections.map((co, i) => {
+                const colorDropStyle = { backgroundColor: data[co].hex };
+                const k = `${i}${options[co]}`;
+                return (<div key={k} className="selected-color" style={colorDropStyle}></div>);
+              })}
+            </div>
+            <div className="background-status">
+              <label htmlFor="bgcolor" className="input-label">Background</label>
+              <input type="checkbox" id="bgcolor" name="bgcolor" onChange={handleCheck} checked={backgroundOn} />
+            </div>
+            {backgroundOn && (
+              <div className="background-opacity">
+                <label htmlFor="volume" className="input-label">α</label>
+                <input type="range" id="opacity" name="opacity" min="4" max="96" />
+              </div>
+            )}
           </div>
         </>
       ) : (

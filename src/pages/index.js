@@ -4,7 +4,8 @@ import Canv from '../components/canv.jsx';
 
 export default function Riso() {
   const [data, setData] = useState([]);
-  const [colors, setColors] = useState([21, 10, 14, 32]);
+  const [colorSelections, setColorSelections] = useState([32, 21, 10]);
+  const [backgroundOn, setBackgroundOn] = useState(false);
 
   const getData = () => {
     fetch("colorlist.json", {
@@ -26,17 +27,25 @@ export default function Riso() {
   }, []);
 
   const handleChangeColor = (newColors) => {
-    console.log('colors updated', newColors);
-    setColors(newColors);
+    setColorSelections(newColors);
   }
+
+  const handleCheckBackground = (value) => {
+    setBackgroundOn(value);
+  }
+
+  const canvasColors = colorSelections.map(index => data[index]);
 
   return (
     <div className="page">
-      <Swatches data={data} onChangeColor={handleChangeColor} />
-      <Canv colors={colors} />
-      {/* <div className="controls">
-
-      </div> */}
+      <Swatches
+        data={data}
+        onChangeColor={handleChangeColor}
+        colorSelections={colorSelections}
+        onCheckBackground={handleCheckBackground}
+        backgroundOn={backgroundOn}
+      />
+      <Canv canvasColors={canvasColors} />
     </div>
   );
 }
