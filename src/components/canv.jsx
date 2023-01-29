@@ -42,7 +42,6 @@ const Canv = ({ canvasColors, geoms, hasBackgroundColor, separated }) => {
         }
       });
 
-      ctx0.globalCompositeOperation = 'multiply';
   
       // Render second layer (color) of geometry
       geoms.circles.forEach(c => {

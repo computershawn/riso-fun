@@ -151,6 +151,7 @@
 
 .layer1, .layer2 {
   mix-blend-mode: multiply;
+  /* opacity: 0.75; */
 }
 
 .separated {
