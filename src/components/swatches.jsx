@@ -2,7 +2,15 @@ import React from "react";
 
 import Swatch from "./swatch.jsx";
 
-const Swatches = ({ data, onChangeColor, colorSelections, backgroundOn, onCheckBackground }) => {
+const Swatches = ({
+  data,
+  onChangeColor,
+  colorSelections,
+  backgroundOn,
+  separated,
+  onCheckBackground,
+  onCheckSeparate,
+}) => {
   const [selectedIndex, setSelectedIndex] = React.useState(colorSelections[0]);
   const [selectedLayer, setSelectedLayer] = React.useState(0);
 
@@ -20,8 +28,12 @@ const Swatches = ({ data, onChangeColor, colorSelections, backgroundOn, onCheckB
     onChangeColor(updated);
   }
 
-  const handleCheck = (e) => {
+  const handleToggleBackground = (e) => {
     onCheckBackground(e.target.checked);
+  }
+
+  const handleToggleSeparate = (e) => {
+    onCheckSeparate(e.target.checked);
   }
 
   const options = [
@@ -72,9 +84,9 @@ const Swatches = ({ data, onChangeColor, colorSelections, backgroundOn, onCheckB
                 return (<div key={k} className="selected-color" style={colorDropStyle}></div>);
               })}
             </div>
-            <div className="background-status">
+            <div className="layer-ctrl">
               <label htmlFor="bgcolor" className="input-label">Background</label>
-              <input type="checkbox" id="bgcolor" name="bgcolor" onChange={handleCheck} checked={backgroundOn} />
+              <input type="checkbox" id="bgcolor" name="bgcolor" onChange={handleToggleBackground} checked={backgroundOn} />
             </div>
             {backgroundOn && (
               <div className="background-opacity">
@@ -82,6 +94,10 @@ const Swatches = ({ data, onChangeColor, colorSelections, backgroundOn, onCheckB
                 <input type="range" id="opacity" name="opacity" min="4" max="96" />
               </div>
             )}
+            <div className="layer-ctrl">
+              <label htmlFor="separate" className="input-label">Separate Layers</label>
+              <input type="checkbox" id="separate" name="separate" onChange={handleToggleSeparate} checked={separated} />
+            </div>
           </div>
         </>
       ) : (

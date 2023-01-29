@@ -1,4 +1,4 @@
-import { ht } from "@/constants";
+import { ht, wd } from "@/constants";
 
 const randIndex = (arr) => {
   return Math.floor(Math.random() * arr.length);
@@ -6,7 +6,8 @@ const randIndex = (arr) => {
 
 const bump = (c, ctx, r, x, y, alp, outlines) => {
   const co = lerpColorRGB(c.rgb, [255, 255, 255], alp);
-  ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
+  // ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
+  ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b})`;
   ctx.strokeStyle = `rgb(0, 0, 0, 0.5)`;
   ctx.beginPath();
   ctx.arc(x, y, r, Math.PI, 2 * Math.PI);
@@ -34,7 +35,8 @@ const bump = (c, ctx, r, x, y, alp, outlines) => {
 
 const circo = (c, ctx, r, x, y, alp, outlines) => {
   const co = lerpColorRGB(c.rgb, [255, 255, 255], alp);
-  ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
+  // ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b}, ${alp})`;
+  ctx.fillStyle = `rgb(${co.r}, ${co.g}, ${co.b})`;
   ctx.strokeStyle = `rgb(0, 0, 0, 0.5)`;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, 2 * Math.PI);
@@ -42,6 +44,11 @@ const circo = (c, ctx, r, x, y, alp, outlines) => {
   if (outlines) {
     ctx.stroke();
   }
+};
+
+const renderBackground = (c, ctx, hasBackgroundColor) => {
+  ctx.fillStyle = hasBackgroundColor ? `rgb(${c.rgb[0]}, ${c.rgb[1]}, ${c.rgb[2]}, ${0.24})` : 'rgb(255, 255, 255)';
+  ctx.fillRect(0, 0, wd, ht);
 };
 
 const lerpColorRGB = (color0, color1, amount) => {
@@ -58,8 +65,21 @@ const easeInCubic = (x) => {
   return x * x * x;
 }
 
-function easeOutCubic(x) {
+const easeOutCubic = (x) => {
   return 1.0 - Math.pow(1.0 - x, 3);
 }
 
-export { bump, circo, easeInCubic, easeOutCubic, randIndex };
+const wobble = (n) => {
+  const result = Math.random() * n * (Math.random() > 0.5 ? 1 : -1);
+  return Math.round(result);
+};
+
+export {
+  bump,
+  circo,
+  easeInCubic,
+  easeOutCubic,
+  randIndex,
+  renderBackground,
+  wobble,
+};
