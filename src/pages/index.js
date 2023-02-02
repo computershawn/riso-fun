@@ -10,7 +10,7 @@ import { easeOutCubic } from "@/utils/cool.js";
   * Outlines should use one of the selected colors instead of dark gray
 */
 
-export default function Riso() {
+export default function Riso () {
   const [data, setData] = useState([]);
   const [geoms, setGeoms] = useState({});
   const [colorSelections, setColorSelections] = useState([20, 10, 13]);
